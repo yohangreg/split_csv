@@ -2,24 +2,24 @@ import pandas as pd # type: ignore
 import sys
 import os
 
-library = "Colegio_Anchieta_Bela_Vista"
+library = ""
 
-# def check_duplicates(file_path):
-#     # Carregando o arquivo CSV
-#     df = pd.read_csv(file_path)
+def check_duplicates(file_path):
+    # Carregando o arquivo CSV
+    df = pd.read_csv(file_path)
 
-#     # Contando a ocorrência de cada código de barras
-#     duplicate_counts = df['barcode'].value_counts()
+    # Contando a ocorrência de cada código de barras
+    duplicate_counts = df['barcode'].value_counts()
 
-#     # Filtrando apenas os códigos de barras que aparecem mais de uma vez
-#     duplicates = duplicate_counts[duplicate_counts > 1]
+    # Filtrando apenas os códigos de barras que aparecem mais de uma vez
+    duplicates = duplicate_counts[duplicate_counts > 1]
 
-#     if not duplicates.empty:
-#         print("Barcodes duplicados encontrados:")
-#         for barcode, count in duplicates.items():
-#             print(f"{barcode}: {count} vezes")
-#     else:
-#         print("Nenhum barcode duplicado encontrado.")
+    if not duplicates.empty:
+        print("Barcodes duplicados encontrados:")
+        for barcode, count in duplicates.items():
+            print(f"{barcode}: {count} vezes")
+    else:
+        print("Nenhum barcode duplicado encontrado.")
 
 def split_csv(file_path, chunk_size=1000):
     # Carregando o arquivo CSV
